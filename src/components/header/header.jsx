@@ -1,13 +1,13 @@
 import './header.css';
 
 const date = new Date();
-let timezone = () => {
+const timezone = () => {
     try {
         const gh = date.getHours();
         if (gh < 5) return 'Доброй ночи';
-        if ((gh > 5) && (gh < 10)) return 'Доброе утро';
+        if ((gh >= 5) && (gh <= 10)) return 'Доброе утро';
         if ((gh > 10) && (gh < 18)) return 'Добрый день';
-        if (gh > 18) return 'Добрый вечер';
+        if (gh >= 18) return 'Добрый вечер';
     }
     catch (e) {
         return 'Здравствуйте';
